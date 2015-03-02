@@ -22,6 +22,10 @@ int main()
     printf("Enter the employee number followed by the product number\n"
         "such as '2 3' (Without quotes)\n");
 
+    int i;
+    for (i = 0; i < NUMOFEMPLOYEES; i++)
+        *(employees + i) = 0;
+
     while (1) //yuck
     {
         printf(":");

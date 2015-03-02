@@ -1,6 +1,6 @@
 #!/bin/bash
-workspace="/home/vnc/cworkspace"
-for j in ${workspace}/homework*; do
+workspace="$(pwd)"
+for j in "${workspace}/homework*"; do
 	ls ${j}/*.c &> /dev/null
 	if [ $? == 0 ]; then
 		for i in ${j}/*.c; do
