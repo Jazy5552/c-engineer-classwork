@@ -122,6 +122,7 @@ int main()
                 printf("Invalid figure selection!");
                 break;
             }
+            break;
 
         case 3: //Volume
             switch (getFigureMenu(i))
@@ -154,6 +155,7 @@ int main()
                 printf("Invalid figure selection!");
                 break;
             }
+            break;
 
         default:
             printf("Invalid selection!");
