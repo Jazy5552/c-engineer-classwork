@@ -17,14 +17,10 @@ int main()
     const int NUMOFPRODUCTS = 5;
     const int NUMOFEMPLOYEES = 4;
     int productCommision[] = {20, 10, 5, 2, 1};
-    int employees[NUMOFEMPLOYEES];
+    int employees[NUMOFEMPLOYEES] = {};
     int i1 = 0, i2 = 0;
     printf("Enter the employee number followed by the product number\n"
         "such as '2 3' (Without quotes)\n");
-
-    int i;
-    for (i = 0; i < NUMOFEMPLOYEES; i++)
-        *(employees + i) = 0; //Initialize every employee value to 0
 
     while (1) //yuck
     {
@@ -50,7 +46,7 @@ int main()
     }
 
     //Display employee earnings
-    //int i;
+    int i;
     for (i = 0; i < NUMOFEMPLOYEES; i++)
     {
         printf("Employee num %d made $%d\n", i + 1, *(employees + i));
