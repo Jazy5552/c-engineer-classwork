@@ -1,6 +1,6 @@
 /**
     Project 1 for C for Engineers
-    Made by: Ana Uribe
+    Made by: Ana Carolina Uribe
              Jassiel Llerena
     Spring 2015
 **/
