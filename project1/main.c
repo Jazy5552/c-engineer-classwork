@@ -1,6 +1,6 @@
 /**
     Project 1 for C for Engineers
-    Made by: Ana Uribepuentes
+    Made by: Ana Uribe
              Jassiel Llerena
     Spring 2015
 **/
@@ -49,7 +49,6 @@ int main()
     printf("Ana and Jazy's multi-geometry calculator!\n");
     char userIn[80];
 
-    //TODO Put in loop
     do
     {
         int i = getCalculateMenu();
