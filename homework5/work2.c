@@ -53,7 +53,7 @@ int main()
     printf("\n\nThe 20 numbers you entered are as follows:\n");
     for (i = 0; i < arraySize; i++)
     {
-        printf("%5.d\n", *(array + i));
+        printf("%d. %5.d\n", i, *(array + i));
     }
     return 0;
 }
