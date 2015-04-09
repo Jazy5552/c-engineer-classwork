@@ -1,6 +1,7 @@
 /**
-*	Made by: Rose
+*	Made by: Rose Jean Louis
 *				Jazy Llerena
+*		Problem 1
 **/
 #include <stdio.h>
 #include <stdlib.h> //atoi
@@ -41,9 +42,8 @@ int main()
 	{
 		memset(buffer, '\0', BLEN); //Clear buffer
 		memset(ebuffer, '\0', EBLEN); //Clear buffer
-		fgets(buffer, 80, msg);
-		if (feof(msg))
-			break; //Reached eof
+		if (fgets(buffer, 80, msg) == NULL)
+			break; //File has ended
 		//Encrypt buffer into ebuffer
 		encrypt(buffer, ebuffer, key);
 		//Write the ebuffer to the encrypted message file
@@ -58,7 +58,7 @@ int main()
 	fclose(msg);
 	fclose(emsg);
 	
-	printf("Encryption Complete\n");
+	printf("\nEncryption Complete\n");
 	/*
 	char str[] = "Hello World";
 	char estr[20];

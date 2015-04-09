@@ -1,7 +1,11 @@
 /**
 Definition file encrypt.c for the header file encrypt.h
+Will shift the characters in the original string according to the key
+and will loop around the end and beginning of the 'a' and 'z' characters
+respectively.
 **/
 #include "encrypt.h"
+#include <stdio.h>
 
 //NOTE: char(65) = 'A'	char(97) = 'a'
 //		  char(90) = 'Z'	char(122) = 'z'
@@ -21,21 +25,25 @@ void encrypt(char *ostr, char *estr, int key)
 		{
 			//Make sure it's a letter
 			//Perform the encryption
-			estr[i] = (char)((int)ostr[i] + key);
-			if (estr[i] > 90) //Went over 'Z', nono
-				estr[i] = estr[i] - 26;
-			else if (estr[i] < 65) //Went below 'A', nope
-				estr[i] = estr[i] + 26;
+			int cholder = (int)ostr[i] + key;
+			if (cholder > 90) //Went over 'z', nono
+				cholder = cholder - 26;
+			else if (cholder < 65) //Went below 'a', nope
+				cholder = cholder + 26;
+			//Set the estr[i] char
+			estr[i] = (char)cholder;
 		}
 		//Lowercase letter
-		else if (ostr[i] > 96 && ostr[i] < 122)
+		else if (ostr[i] > 96 && ostr[i] < 123)
 		{
 			//Perform encryption
-			estr[i] = (char)((int)ostr[i] + key);
-			if (estr[i] > 122) //Went over 'z', nono
-				estr[i] = estr[i] - 26;
-			else if (estr[i] < 97) //Went below 'a', nope
-				estr[i] = estr[i] + 26;
+			int cholder = (int)ostr[i] + key;
+			if (cholder > 122) //Went over 'z', nono
+				cholder = cholder - 26;
+			else if (cholder < 97) //Went below 'a', nope
+				cholder = cholder + 26;
+			//Set the estr[i] char
+			estr[i] = (char)cholder;
 		}
 		else
 		{

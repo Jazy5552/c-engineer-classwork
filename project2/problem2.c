@@ -1,5 +1,7 @@
 /**
-*	Problem 2
+*	Made by: Rose Jean Louis
+*				Jazy Llerena
+*		Problem 2
 **/
 #include <stdio.h>
 #include <stdlib.h> //atoi
@@ -28,7 +30,11 @@ int main()
 	}
 
 	//Get key from key.txt
-	fgets(buffer, BUFLEN, keyfile);
+	if (fgets(buffer, BUFLEN, keyfile) == NULL)
+	{
+		printf("Error: Key file is empty!\n");
+		return 1; //Key file is empty!
+	}
 	removenewline(buffer);
 	key = atoi(buffer); //WARNING May cause undefined behavior!
 
@@ -38,9 +44,8 @@ int main()
 		memset(buffer, '\0', BUFLEN); //Clear buffers
 		memset(debuffer, '\0', BUFLEN);
 		//Get a line from the encrypted message file
-		fgets(buffer, BUFLEN, emsg);
-		if (feof(emsg))
-			break; //eof
+		if (fgets(buffer, BUFLEN, emsg) == NULL)
+			break; //Nothing left in file
 		
 		//Run the decrypt function
 		decrypt(buffer, debuffer, key);
