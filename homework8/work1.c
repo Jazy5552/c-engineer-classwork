@@ -1,5 +1,6 @@
 /**
 *	Made by Jazy Llerena
+*	WARNING: Messy code
 **/
 #include <stdio.h>
 #include <string.h>
